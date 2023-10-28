@@ -33,4 +33,16 @@ class PaisController extends Controller
             "cantidad"=> 1
         ]);
     }
+
+    public function eliminar(Request $request){
+        $Pais = new Pais(); 
+        $Pais->id_pais = $request->id;
+        $Pais->delete();
+
+        return response()->json([
+            "success"=>true,
+            "message"=>"pais eliminado",
+           
+        ]);
+    }
 }

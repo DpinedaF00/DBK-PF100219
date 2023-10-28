@@ -11,5 +11,6 @@ class Pais extends Model
 
     protected $connection = 'mysql';
     protected $table = 'pais';
+    protected $primaryKey = 'id_pais'; //modificado
     public $timestamps = false; 
 }

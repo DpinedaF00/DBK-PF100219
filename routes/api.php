@@ -27,6 +27,8 @@ Route::get("/ejecutar",[respuestaController::class,"index"]);
 
 Route::post("/nuevo", [PaisController::class,"crearPais"]);
 Route::get("/obtener", [PaisController::class,"obtener"]);
+Route::delete("/borrar", [PaisController::class,"eliminar"]);
+
 
 
 
