@@ -34,10 +34,19 @@ class PaisController extends Controller
         ]);
     }
 
-    public function eliminar(Request $request){
-        $Pais = new Pais(); 
-        $Pais->id_pais = $request->id;
-        $Pais->delete();
+    public function eliminarPais($id){
+        //$Pais = new Pais(); 
+        $Pais = Pais::find($id);
+
+        if(isset($Pais)){
+            $Pais->delete();
+        }else{
+            return response()->json([
+            "success"=>false,
+            "message"=>"pais no encontrado",
+                
+            ]);
+        }
 
         return response()->json([
             "success"=>true,
