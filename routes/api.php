@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\respuestaController;
 use App\Http\Controllers\PaisController;
+use App\Http\Controllers\AutoresController;
 
 
 /*
@@ -41,6 +42,8 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
 
 });
 
+
+Route::get("/autores", [AutoresController::class,"obtenerAutores"]);
 
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
